@@ -1,0 +1,54 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+html, body, #root {
+  height: 100%;
+}
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: #0a1929;
+  background: #f7f8fa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+/* Dotted arc pattern inspired by the Southend cover */
+.bg-dot-arc {
+  background-color: #0a1929;
+  background-image:
+    radial-gradient(circle at 90% 50%, rgba(238, 90, 42, 0.12), transparent 45%),
+    radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: auto, 22px 22px;
+  background-position: 0 0, 0 0;
+}
+.bg-grid-light {
+  background-image:
+    radial-gradient(rgba(10, 25, 41, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+/* Hexagon clip-path */
+.clip-hex {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+/* subtle marquee for ticker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+/* Headline polish — tight tracking on large display sizes for modern feel */
+h1, h2 {
+  letter-spacing: -0.02em;
+}
+h3, h4 {
+  letter-spacing: -0.01em;
+}
