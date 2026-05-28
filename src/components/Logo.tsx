@@ -3,9 +3,9 @@ interface LogoProps {
   variant?: 'light' | 'dark';
   className?: string;
 }
-const LOGO_DARK_BG = "/2.png";
+const LOGO_DARK_BG = "/logo-dark.svg";
 
-const LOGO_LIGHT_BG = "/1.png";
+const LOGO_LIGHT_BG = "/logo-dark.svg";
 
 /**
  * SouthEnd Forex & Money Remittance brand lockup.
@@ -31,7 +31,7 @@ export function LogoMark({ className = '' }: {className?: string;}) {
   return (
     <div className={`relative overflow-hidden ${className}`} aria-hidden="true">
       <img
-        src={LOGO_LIGHT_BG}
+        src={LOGO_DARK_BG}
         alt=""
         className="absolute left-1/2 top-0 h-[220%] max-w-none -translate-x-1/2"
         style={{

@@ -3,23 +3,15 @@ import React from 'react';
 const partners = [
 {
   name: 'Western Union',
-  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Western_Union_Logo_2019.svg/320px-Western_Union_Logo_2019.svg.png'
+  logo: '/logo.wu.big.svg'
 },
 {
   name: 'MoneyGram',
-  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/MoneyGram_logo.svg/320px-MoneyGram_logo.svg.png'
+  logo: '/logo-moneygram-black.svg'
 },
 {
   name: 'M-Pesa',
-  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/320px-M-PESA_LOGO-01.svg.png'
-},
-{
-  name: 'Mastercard',
-  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/320px-Mastercard-logo.svg.png'
-},
-{
-  name: 'Visa',
-  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/320px-Visa_Inc._logo.svg.png'
+  logo: '/SafM-PESA-Logo.jpg'
 }];
 
 export function Partners() {
@@ -29,7 +21,7 @@ export function Partners() {
         <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-navy/50">
           Our trusted partners
         </p>
-        <div className="mt-8 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-8 grid grid-cols-3 items-center gap-6 max-w-3xl mx-auto">
           {partners.map((p) =>
           <div
             key={p.name}
