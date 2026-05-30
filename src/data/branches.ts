@@ -27,12 +27,12 @@ export const BRANCHES: Branch[] = [
   {
     name: 'Upperhill',
     region: 'Nairobi',
-    address: 'Upperhill, Nairobi',
+    address: 'The Beacon Mall, 1st Floor, Upperhill, Nairobi',
     hours: 'Mon–Sat · 9:00 AM – 4:00 PM',
     phone: '0769 558 811',
     phoneAlt: '0719 806 999',
     email: 'info@southendmrp.co.ke',
-    mapQuery: 'Upperhill, Nairobi, Kenya'
+    mapQuery: 'The Beacon Mall, 1st Floor, Upperhill, Nairobi, Kenya'
   }
 ];
 

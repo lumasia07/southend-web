@@ -74,36 +74,6 @@ const MILESTONES = [
   desc: '8 years in operation — two branches across Nairobi, 50,000+ customers served.'
 }];
 
-const LEADERSHIP = [
-{
-  name: 'Aisha Mwangi',
-  role: 'Chief Executive Officer',
-  bio: '15+ years in cross-border payments. Previously led FX desks at two East African banks.',
-  photo:
-  'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80'
-},
-{
-  name: 'David Otieno',
-  role: 'Head of Operations',
-  bio: 'Grew Southend from its Southend Mall roots to branches across Nairobi. Obsessed with branch experience and uptime.',
-  photo:
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
-},
-{
-  name: 'Sarah Kamau',
-  role: 'Head of Compliance',
-  bio: 'CBK-certified AML/KYC specialist. Keeps Southend the safest place to move your money.',
-  photo:
-  'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
-},
-{
-  name: 'Brian Mutua',
-  role: 'Head of Treasury',
-  bio: 'Manages our wholesale FX book. Ensures liquidity across all 15+ currency pairs.',
-  photo:
-  'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80'
-}];
-
 export function Corporate() {
   useScreenInit();
   return (
@@ -157,17 +127,22 @@ export function Corporate() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-navy/70">
               Banks and apps treat money movement as a transaction. We treat it
-              as a relationship. As a CBK-licensed forex bureau, Southend was
-              founded in 2018 at Southend Mall to bring competitive FX services
-              to Kenya — without hidden spreads or bureaucracy. In 2025, we
-              received our full IMT licence, extending that same personal
-              service to international money transfers.
+              as a relationship. Our mission is to make foreign exchange and
+              international transfers straightforward, honest, and personal —
+              with no hidden spreads and no runaround.
             </p>
-            <p className="mt-3 text-base leading-relaxed text-navy/70">
-              Today, we serve customers from our Wilson Airport and Upperhill
-              branches and four global remittance networks. We are fully CBK
-              regulated, audited annually, and rated 4.9 out of 5 by our
-              customers.
+            <p className="mt-4 text-base leading-relaxed text-navy/70">
+              That mission took shape in 2018, when we opened at Southend Mall
+              as a CBK-licensed forex bureau. Eight years later, we serve
+              customers from Wilson Airport and The Beacon Mall in Upperhill —
+              still the same walk-in service, still the same commitment to fair
+              rates and people who know your name.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-navy/70">
+              In 2025, we received our full IMT licence from the Central Bank
+              of Kenya — extending that mission to global remittance through
+              Western Union, MoneyGram, and more. Exchange currency and send
+              money worldwide, under one roof, with a personal touch.
             </p>
 
             <div className="mt-8 grid grid-cols-3 gap-6 border-t border-navy/10 pt-8">
@@ -266,53 +241,6 @@ export function Corporate() {
               )}
             </StaggerGroup>
           </div>
-        </div>
-      </section>
-
-      {/* Leadership */}
-      <section className="bg-[#f7f8fa] py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <div className="mb-3 inline-flex items-center gap-3">
-              <span className="h-px w-10 bg-brand" />
-              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand">
-                Leadership
-              </span>
-              <span className="h-px w-10 bg-brand" />
-            </div>
-            <h2 className="text-4xl font-bold leading-tight tracking-tight text-navy sm:text-5xl">
-              The people behind Southend.
-            </h2>
-          </AnimatedSection>
-
-          <StaggerGroup className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {LEADERSHIP.map((l) =>
-            <motion.figure
-              key={l.name}
-              variants={itemVariants}
-              className="group overflow-hidden rounded-3xl border border-navy/10 bg-white transition-all hover:-translate-y-1 hover:shadow-xl">
-              
-                <div className="aspect-[4/5] overflow-hidden bg-navy/5">
-                  <img
-                  src={l.photo}
-                  alt={l.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                
-                </div>
-                <figcaption className="p-5">
-                  <div className="text-base font-semibold tracking-tight text-navy">
-                    {l.name}
-                  </div>
-                  <div className="text-xs font-medium uppercase tracking-widest text-brand">
-                    {l.role}
-                  </div>
-                  <p className="mt-2 text-xs leading-relaxed text-navy/60">
-                    {l.bio}
-                  </p>
-                </figcaption>
-              </motion.figure>
-            )}
-          </StaggerGroup>
         </div>
       </section>
 

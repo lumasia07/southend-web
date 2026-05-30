@@ -86,7 +86,7 @@ const FAQS: FAQItem[] = [
 {
   category: 'Branches',
   q: 'Where are you located?',
-  a: 'We have branches at Wilson Airport (Pewin House, next to I&M Bank) and Upperhill, Nairobi. Full hours and contact details are on our Branches page.'
+  a: 'We have branches at Wilson Airport (Pewin House, next to I&M Bank) and The Beacon Mall, 1st Floor, Upperhill, Nairobi. Full hours and contact details are on our Branches page.'
 },
 {
   category: 'Branches',
