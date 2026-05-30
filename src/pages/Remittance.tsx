@@ -304,8 +304,8 @@ export function Remittance() {
         <div className="mx-auto grid max-w-6xl gap-8 px-6 sm:grid-cols-3">
           <TrustItem
             icon={ShieldCheckIcon}
-            title="CBK Regulated"
-            desc="Every transaction is fully compliant with Central Bank of Kenya AML/KYC rules." />
+            title="CBK Forex Bureau"
+            desc="Licensed forex bureau with IMT authorisation granted in 2025. Every transaction follows CBK AML/KYC rules." />
           
           <TrustItem
             icon={ZapIcon}

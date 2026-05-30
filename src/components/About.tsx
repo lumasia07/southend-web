@@ -60,9 +60,9 @@ export function About() {
               Why thousands choose Southend
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-navy/70">
-              Enjoy advanced security, 24/7 customer support, and comprehensive
-              financial management. Experience the future of finance with Southend
-              Forex &amp; Money Remittance, Kenya.
+              Enjoy advanced security, 24/7 customer support, and competitive
+              forex rates. As a CBK-licensed forex bureau with an IMT licence
+              granted in 2025, Southend serves customers across Kenya.
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {points.map((p) =>
@@ -79,7 +79,7 @@ export function About() {
 
           {/* Right: Stats grid */}
           <div className="grid grid-cols-2 gap-4">
-            <StatCard value="15+" label="Years of trust" accent />
+            <StatCard value="8" label="Years in operation" accent />
             <StatCard value="50K+" label="Customers served" />
             <StatCard value="100+" label="Countries reached" />
             <StatCard value="24/7" label="Customer support" accent />

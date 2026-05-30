@@ -105,26 +105,35 @@ export function Footer() {
           <div>
             <Logo variant="dark" className="h-12 md:h-12" />
             <p className="mt-5 max-w-xs text-sm text-white/60">
-              Your trusted partner in foreign exchange and global money
-              remittance — with a personal touch.
+              A CBK-licensed forex bureau — and IMT licensed since 2025. Foreign
+              exchange and global remittance with a personal touch.
             </p>
             <div className="mt-6 space-y-2 text-sm">
               <a
-                href="tel:+254700000000"
+                href="tel:0769558811"
                 className="flex items-center gap-2 hover:text-brand">
                 
-                <PhoneIcon className="h-4 w-4 text-brand" /> +254 700 000 000
+                <PhoneIcon className="h-4 w-4 text-brand" /> 0769 558 811
               </a>
               <a
-                href="mailto:hello@southendforex.co.ke"
+                href="tel:0719806999"
+                className="flex items-center gap-2 hover:text-brand">
+                
+                <PhoneIcon className="h-4 w-4 text-brand" /> 0719 806 999
+              </a>
+              <a
+                href="mailto:info@southendmrp.co.ke"
                 className="flex items-center gap-2 hover:text-brand">
                 
                 <MailIcon className="h-4 w-4 text-brand" />{' '}
-                hello@southendforex.co.ke
+                info@southendmrp.co.ke
               </a>
               <div className="flex items-start gap-2">
                 <MapPinIcon className="mt-0.5 h-4 w-4 text-brand" />
-                <span>Southend House, Moi Avenue, Nairobi, Kenya</span>
+                <span>
+                  Pewin House, Ground Floor, next to I&M Bank, Wilson Airport,
+                  Nairobi
+                </span>
               </div>
             </div>
           </div>
@@ -153,7 +162,7 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-white/10 py-6 sm:flex-row sm:items-center">
           <p className="text-xs text-white/50">
             © {new Date().getFullYear()} Southend Forex &amp; Money Remittance.
-            All rights reserved. CBK Licensed.
+            All rights reserved. CBK Forex Bureau · IMT Licensed 2025.
           </p>
           <div className="flex items-center gap-2">
             {[FacebookIcon, InstagramIcon, TwitterIcon, LinkedinIcon].map(

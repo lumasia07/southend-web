@@ -76,7 +76,7 @@ const FAQS: FAQItem[] = [
 {
   category: 'Fees & security',
   q: 'Is Southend regulated?',
-  a: 'Yes. We hold a Class A Forex Bureau licence and a full International Money Transfer licence from the Central Bank of Kenya. We are audited annually.'
+  a: 'Yes. Southend is a CBK-licensed forex bureau. We received our full International Money Transfer licence from the Central Bank of Kenya in 2025. We are audited annually.'
 },
 {
   category: 'Fees & security',
@@ -86,12 +86,12 @@ const FAQS: FAQItem[] = [
 {
   category: 'Branches',
   q: 'Where are you located?',
-  a: 'We have 8 branches across Nairobi, the Coast, Western Kenya, and the Rift Valley. The full list with hours is on our Branches page.'
+  a: 'We have branches at Wilson Airport (Pewin House, next to I&M Bank) and Upperhill, Nairobi. Full hours and contact details are on our Branches page.'
 },
 {
   category: 'Branches',
   q: 'Do you operate on Sundays?',
-  a: 'Eastleigh branch is open 7 days a week. Most other branches operate Mon–Sat.'
+  a: 'Wilson Airport is open 7 days a week (Mon–Sun · 7:00 AM – 8:00 PM). Upperhill operates Mon–Sat · 9:00 AM – 4:00 PM.'
 }];
 
 export function FAQ() {

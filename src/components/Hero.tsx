@@ -91,9 +91,9 @@ export function Hero() {
             variants={FADE_UP}
             className="mt-6 max-w-lg text-base leading-relaxed text-white/70">
             
-            Seamless forex and international money transfers — with real-time
-            rates, secure transactions to over 100 countries, and 24/7 support.
-            Built in Kenya, trusted globally.
+            As a CBK-licensed forex bureau, we buy and sell major currencies at
+            competitive rates — and with our 2025 IMT licence, send money
+            securely to over 100 countries. Built in Kenya, trusted globally.
           </motion.p>
 
           <motion.div
@@ -134,9 +134,9 @@ export function Hero() {
               <StarIcon key={i} className="h-4 w-4 fill-brand" />
               )}
             </div>
-            <span className="font-semibold text-white">Trusted Partner</span>
+            <span className="font-semibold text-white">CBK Forex Bureau</span>
             <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>Trusted by thousands across Kenya</span>
+            <span>IMT Licensed 2025</span>
           </motion.div>
         </div>
 

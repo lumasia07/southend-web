@@ -15,33 +15,8 @@ import {
   itemVariants } from
 '../components/AnimatedSection';
 import { useScreenInit } from '../useScreenInit.js';
-const BRANCHES = [
-{
-  name: 'Beacon Mall',
-  region: 'Nairobi',
-  address: 'Beacon Mall, 1st Floor, Nairobi',
-  hours: 'Mon–Sat · 8:00 AM – 7:00 PM',
-  phone: '+254 700 000 001',
-  email: 'beacon@southendforex.co.ke',
-  tag: 'Main Branch'
-},
-{
-  name: 'Upperhill',
-  region: 'Nairobi',
-  address: 'Upperhill, Nairobi',
-  hours: 'Mon–Sat · 9:00 AM – 6:00 PM',
-  phone: '+254 700 000 002',
-  email: 'upperhill@southendforex.co.ke'
-},
-{
-  name: 'Wilson Airport',
-  region: 'Nairobi',
-  address: 'Wilson Airport, Nairobi',
-  hours: 'Mon–Sun · 7:00 AM – 8:00 PM',
-  phone: '+254 700 000 003',
-  email: 'wilsonairport@southendforex.co.ke',
-  tag: '7 days a week'
-}];
+import { BranchMap } from '../components/BranchMap';
+import { BRANCHES, googleMapsDirectionsUrl } from '../data/branches';
 
 const REGIONS = ['All', 'Nairobi'];
 export function BranchesPage() {
@@ -70,7 +45,7 @@ export function BranchesPage() {
             <span className="text-brand">We're around the corner.</span>
           </>
         }
-        subtitle="Three branches across Nairobi — Beacon Mall, Upperhill and Wilson Airport. Cash, M-Pesa, agency banking and remittance, all under one roof."
+        subtitle="Two branches in Nairobi — Wilson Airport and Upperhill. Cash, M-Pesa, agency banking and remittance, all under one roof."
         crumbs={[
         {
           label: 'Home',
@@ -159,6 +134,14 @@ export function BranchesPage() {
                   
                     <PhoneIcon className="h-3.5 w-3.5 text-brand" /> {b.phone}
                   </a>
+                  {'phoneAlt' in b && b.phoneAlt &&
+                  <a
+                  href={`tel:${b.phoneAlt.replace(/\s/g, '')}`}
+                  className="flex items-center gap-2 text-navy/70 hover:text-brand">
+                  
+                    <PhoneIcon className="h-3.5 w-3.5 text-brand" /> {b.phoneAlt}
+                  </a>
+                  }
                   <a
                   href={`mailto:${b.email}`}
                   className="flex items-center gap-2 text-navy/70 hover:text-brand">
@@ -168,7 +151,7 @@ export function BranchesPage() {
                 </div>
                 <div className="mt-5 flex gap-2">
                   <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.name + ' ' + b.address + ' Kenya')}`}
+                  href={googleMapsDirectionsUrl(b.mapQuery)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-navy py-2.5 text-xs font-semibold text-white transition-colors hover:bg-navy-700">
@@ -197,31 +180,25 @@ export function BranchesPage() {
         </div>
       </section>
 
-      {/* Map placeholder strip */}
+      {/* Branch map */}
       <AnimatedSection className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="overflow-hidden rounded-3xl border border-navy/10 bg-navy">
             <div className="grid items-stretch gap-0 lg:grid-cols-2">
               <div className="p-10 text-white">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-brand">
-                  Coming soon
+                  Find us
                 </div>
                 <h3 className="mt-3 text-3xl font-bold tracking-tight">
                   Branch locator map
                 </h3>
                 <p className="mt-3 max-w-md text-white/70">
-                  We're rolling out an interactive map locator with realtime
-                  branch hours and queue estimates. In the meantime, tap
-                  Directions on any branch above to open in Google Maps.
+                  Select a branch to view its location on Google Maps. Tap
+                  Directions on any branch above, or open the full map below.
                 </p>
               </div>
-              <div className="relative min-h-[260px] bg-[radial-gradient(circle_at_30%_40%,rgba(238,90,42,0.25),transparent_50%)]">
-                <div className="absolute inset-0 bg-grid-light opacity-10" />
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-medium text-white/70 backdrop-blur">
-                    Interactive map · Coming soon
-                  </div>
-                </div>
+              <div className="bg-white p-6 lg:p-8">
+                <BranchMap />
               </div>
             </div>
           </div>

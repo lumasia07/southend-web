@@ -16,8 +16,8 @@ const items = [
 },
 {
   icon: ShieldCheckIcon,
-  title: 'CBK Regulated',
-  desc: 'Fully CBK regulated, ensuring compliance with local laws and providing a secure, trustworthy service.'
+  title: 'CBK Forex Bureau',
+  desc: 'Licensed by the Central Bank of Kenya as a forex bureau — and IMT licensed since 2025 for international transfers.'
 },
 {
   icon: LockIcon,

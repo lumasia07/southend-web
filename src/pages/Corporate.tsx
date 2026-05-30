@@ -44,9 +44,9 @@ const VALUES = [
 
 const MILESTONES = [
 {
-  year: '2009',
+  year: '2018',
   label: 'Founded',
-  desc: 'Southend Forex Bureau opens its doors on Moi Avenue, Nairobi.'
+  desc: 'Southend opens its doors at Southend Mall, Nairobi.'
 },
 {
   year: '2013',
@@ -64,14 +64,14 @@ const MILESTONES = [
   desc: 'Adds M-Pesa float, deposits and withdrawals across all branches.'
 },
 {
-  year: '2023',
+  year: '2025',
   label: 'IMT licence',
   desc: 'Granted full International Money Transfer licence by the CBK.'
 },
 {
   year: '2026',
   label: 'Today',
-  desc: '8 branches across Kenya, 50,000+ customers served.'
+  desc: '8 years in operation — two branches across Nairobi, 50,000+ customers served.'
 }];
 
 const LEADERSHIP = [
@@ -85,7 +85,7 @@ const LEADERSHIP = [
 {
   name: 'David Otieno',
   role: 'Head of Operations',
-  bio: 'Built our agent network from 1 branch to 8. Obsessed with branch experience and uptime.',
+  bio: 'Grew Southend from its Southend Mall roots to branches across Nairobi. Obsessed with branch experience and uptime.',
   photo:
   'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
 },
@@ -115,7 +115,7 @@ export function Corporate() {
             The story behind <span className="text-brand">Southend.</span>
           </>
         }
-        subtitle="Born in Nairobi in 2009. Built around one idea: global finance should still feel personal."
+        subtitle="Born at Southend Mall in 2018. Built around one idea: global finance should still feel personal."
         crumbs={[
         {
           label: 'Home',
@@ -157,18 +157,21 @@ export function Corporate() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-navy/70">
               Banks and apps treat money movement as a transaction. We treat it
-              as a relationship. Southend Forex &amp; Money Remittance was
-              founded in 2009 to bring world-class FX and IMT services to Kenya
-              — without the bureaucracy or the hidden spreads.
+              as a relationship. As a CBK-licensed forex bureau, Southend was
+              founded in 2018 at Southend Mall to bring competitive FX services
+              to Kenya — without hidden spreads or bureaucracy. In 2025, we
+              received our full IMT licence, extending that same personal
+              service to international money transfers.
             </p>
             <p className="mt-3 text-base leading-relaxed text-navy/70">
-              Today, we serve over 50,000 customers across 8 branches and four
-              global remittance networks. We are fully CBK regulated, audited
-              annually, and rated 4.9 out of 5 by our customers.
+              Today, we serve customers from our Wilson Airport and Upperhill
+              branches and four global remittance networks. We are fully CBK
+              regulated, audited annually, and rated 4.9 out of 5 by our
+              customers.
             </p>
 
             <div className="mt-8 grid grid-cols-3 gap-6 border-t border-navy/10 pt-8">
-              <Stat value="15+" label="Years operating" />
+              <Stat value="8" label="Years in operation" />
               <Stat value="50K+" label="Customers served" />
               <Stat value="100+" label="Countries reached" />
             </div>
@@ -328,16 +331,17 @@ export function Corporate() {
                 CBK regulated. AML compliant. Annually audited.
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
-                Southend Forex &amp; Money Remittance holds a Class A Forex
-                Bureau licence and a full IMT licence from the Central Bank of
-                Kenya. We follow strict KYC/AML processes on every transaction
-                and publish annual compliance reports.
+                Southend is a CBK-licensed forex bureau, buying and selling
+                major currencies at competitive walk-in rates. In 2025, we were
+                granted a full International Money Transfer licence — so you can
+                exchange and remit under one trusted roof. We follow strict
+                KYC/AML processes on every transaction.
               </p>
             </div>
             <ul className="space-y-3 text-sm">
               {[
-              'CBK Class A Forex Bureau licence',
-              'CBK International Money Transfer licence',
+              'CBK-licensed forex bureau',
+              'CBK International Money Transfer licence (2025)',
               'Annual independent audit (Big 4)',
               'Tier-1 partner: Western Union, MoneyGram',
               'Member, Kenya Forex Bureaus Association'].
@@ -389,7 +393,7 @@ export function Corporate() {
                   <Field
                     label="Phone"
                     name="phone"
-                    placeholder="+254 700 000 000" />
+                    placeholder="0769 558 811" />
                   
                   <Field
                     label="Subject"
@@ -423,29 +427,39 @@ export function Corporate() {
             <AnimatedSection delay={0.1}>
               <div className="rounded-3xl border border-navy/10 bg-white p-6 sm:p-8">
                 <h3 className="text-lg font-semibold tracking-tight text-navy">
-                  Head office
+                  Wilson Airport branch
                 </h3>
                 <p className="mt-2 text-sm text-navy/70">
-                  Southend House, Moi Avenue, Nairobi, Kenya
+                  Pewin House, Ground Floor, next to I&M Bank, Wilson Airport,
+                  Nairobi
                 </p>
                 <div className="mt-6 space-y-3 text-sm">
                   <a
-                    href="tel:+254700000000"
+                    href="tel:0769558811"
                     className="flex items-center gap-3 text-navy/80 hover:text-brand">
                     
                     <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand/10 text-brand">
                       <PhoneIcon className="h-4 w-4" />
                     </span>
-                    +254 700 000 000
+                    0769 558 811
                   </a>
                   <a
-                    href="mailto:hello@southendforex.co.ke"
+                    href="tel:0719806999"
+                    className="flex items-center gap-3 text-navy/80 hover:text-brand">
+                    
+                    <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand/10 text-brand">
+                      <PhoneIcon className="h-4 w-4" />
+                    </span>
+                    0719 806 999
+                  </a>
+                  <a
+                    href="mailto:info@southendmrp.co.ke"
                     className="flex items-center gap-3 text-navy/80 hover:text-brand">
                     
                     <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand/10 text-brand">
                       <MailIcon className="h-4 w-4" />
                     </span>
-                    hello@southendforex.co.ke
+                    info@southendmrp.co.ke
                   </a>
                   <div className="flex items-start gap-3 text-navy/80">
                     <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand/10 text-brand">

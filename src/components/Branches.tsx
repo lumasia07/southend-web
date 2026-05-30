@@ -1,26 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPinIcon, ClockIcon, PhoneIcon, ArrowRightIcon } from 'lucide-react';
-const branches = [
-{
-  name: 'Beacon Mall',
-  address: 'Beacon Mall, 1st Floor, Nairobi',
-  hours: 'Mon–Sat · 8:00 AM – 7:00 PM',
-  phone: '+254 700 000 001',
-  tag: 'Main Branch'
-},
-{
-  name: 'Upperhill',
-  address: 'Upperhill, Nairobi',
-  hours: 'Mon–Sat · 9:00 AM – 6:00 PM',
-  phone: '+254 700 000 002'
-},
-{
-  name: 'Wilson Airport',
-  address: 'Wilson Airport, Nairobi',
-  hours: 'Mon–Sun · 7:00 AM – 8:00 PM',
-  phone: '+254 700 000 003'
-}];
+import { BranchMap } from './BranchMap';
+import { BRANCHES } from '../data/branches';
 
 export function Branches() {
   return (
@@ -38,8 +20,8 @@ export function Branches() {
               Find a Branch Near You
             </h2>
             <p className="mt-4 max-w-xl text-base text-navy/70">
-              Walk into any of our conveniently located branches across Nairobi
-              for cash transactions, advisory, and personal service.
+              Walk into our Wilson Airport or Upperhill branches for cash
+              transactions, advisory, and personal service.
             </p>
           </div>
           <Link
@@ -51,8 +33,8 @@ export function Branches() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {branches.map((b) =>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          {BRANCHES.map((b) =>
           <article
             key={b.name}
             className="group flex flex-col rounded-2xl border border-navy/10 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl">
@@ -83,9 +65,21 @@ export function Branches() {
                 
                   <PhoneIcon className="h-3.5 w-3.5 text-brand" /> {b.phone}
                 </a>
+                {'phoneAlt' in b && b.phoneAlt &&
+                <a
+                href={`tel:${b.phoneAlt.replace(/\s/g, '')}`}
+                className="flex items-center gap-2 hover:text-brand">
+                
+                  <PhoneIcon className="h-3.5 w-3.5 text-brand" /> {b.phoneAlt}
+                </a>
+                }
               </div>
             </article>
           )}
+        </div>
+
+        <div className="mt-12 rounded-3xl border border-navy/10 bg-white p-6 sm:p-8">
+          <BranchMap />
         </div>
       </div>
     </section>);

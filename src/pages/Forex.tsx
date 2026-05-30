@@ -156,8 +156,8 @@ const FEATURES = [
 },
 {
   icon: ShieldCheckIcon,
-  title: 'CBK regulated bureau',
-  desc: 'Fully licensed by the Central Bank of Kenya. Compliant KYC and AML processes for every transaction.'
+  title: 'CBK forex bureau',
+  desc: 'Licensed by the Central Bank of Kenya. IMT licensed in 2025 for compliant international transfers.'
 },
 {
   icon: ClockIcon,

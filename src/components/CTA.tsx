@@ -13,8 +13,8 @@ export function CTA() {
             <span className="text-brand">the easy way?</span>
           </h2>
           <p className="mt-3 text-white/70">
-            Lock in a competitive rate today and experience remittance with a
-            personal touch. CBK regulated. Trusted by thousands.
+            Lock in a competitive rate today. CBK-licensed forex bureau — IMT
+            licensed 2025.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
