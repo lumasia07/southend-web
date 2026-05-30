@@ -204,7 +204,7 @@ export function Corporate() {
               <span className="h-px w-10 bg-brand" />
             </div>
             <h2 className="text-4xl font-bold leading-tight tracking-tight text-navy sm:text-5xl">
-              Sixteen years, one mission.
+              Eight years, one mission.
             </h2>
           </AnimatedSection>
 
