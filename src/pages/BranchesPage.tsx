@@ -17,30 +17,20 @@ import {
 import { useScreenInit } from '../useScreenInit.js';
 const BRANCHES = [
 {
-  name: 'Beacon Mall',
-  region: 'Nairobi',
-  address: 'Beacon Mall, 1st Floor, Nairobi',
-  hours: 'Mon–Sat · 8:00 AM – 7:00 PM',
-  phone: '+254 700 000 001',
-  email: 'beacon@southendforex.co.ke',
-  tag: 'Main Branch'
-},
-{
   name: 'Upperhill',
   region: 'Nairobi',
   address: 'Upperhill, Nairobi',
-  hours: 'Mon–Sat · 9:00 AM – 6:00 PM',
-  phone: '+254 700 000 002',
-  email: 'upperhill@southendforex.co.ke'
+  hours: 'Daily · 9:00 AM – 4:00 PM',
+  phone: '0719 806 999',
+  email: 'info@southendmrp.co.ke'
 },
 {
   name: 'Wilson Airport',
   region: 'Nairobi',
-  address: 'Wilson Airport, Nairobi',
-  hours: 'Mon–Sun · 7:00 AM – 8:00 PM',
-  phone: '+254 700 000 003',
-  email: 'wilsonairport@southendforex.co.ke',
-  tag: '7 days a week'
+  address: 'Pewin House, Ground Floor, next to I&M Bank, Wilson Airport',
+  hours: 'Mon–Fri · 8:30 AM – 6:00 PM · Holidays 9:00 AM – 4:00 PM',
+  phone: '0769 55 88 11',
+  email: 'info@southendmrp.co.ke'
 }];
 
 const REGIONS = ['All', 'Nairobi'];
@@ -70,7 +60,7 @@ export function BranchesPage() {
             <span className="text-brand">We're around the corner.</span>
           </>
         }
-        subtitle="Three branches across Nairobi — Beacon Mall, Upperhill and Wilson Airport. Cash, M-Pesa, agency banking and remittance, all under one roof."
+        subtitle="Two branches across Nairobi — Upperhill and Wilson Airport. Cash, M-Pesa, agency banking and remittance, all under one roof."
         crumbs={[
         {
           label: 'Home',

@@ -110,17 +110,23 @@ export function Footer() {
             </p>
             <div className="mt-6 space-y-2 text-sm">
               <a
-                href="tel:+254700000000"
+                href="tel:0769558811"
                 className="flex items-center gap-2 hover:text-brand">
                 
-                <PhoneIcon className="h-4 w-4 text-brand" /> +254 700 000 000
+                <PhoneIcon className="h-4 w-4 text-brand" /> 0769 55 88 11
               </a>
               <a
-                href="mailto:hello@southendforex.co.ke"
+                href="tel:0719806999"
+                className="flex items-center gap-2 hover:text-brand">
+                
+                <PhoneIcon className="h-4 w-4 text-brand" /> 0719 806 999
+              </a>
+              <a
+                href="mailto:info@southendmrp.co.ke"
                 className="flex items-center gap-2 hover:text-brand">
                 
                 <MailIcon className="h-4 w-4 text-brand" />{' '}
-                hello@southendforex.co.ke
+                info@southendmrp.co.ke
               </a>
               <div className="flex items-start gap-2">
                 <MapPinIcon className="mt-0.5 h-4 w-4 text-brand" />

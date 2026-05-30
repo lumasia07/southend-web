@@ -3,23 +3,16 @@ import { Link } from 'react-router-dom';
 import { MapPinIcon, ClockIcon, PhoneIcon, ArrowRightIcon } from 'lucide-react';
 const branches = [
 {
-  name: 'Beacon Mall',
-  address: 'Beacon Mall, 1st Floor, Nairobi',
-  hours: 'Mon–Sat · 8:00 AM – 7:00 PM',
-  phone: '+254 700 000 001',
-  tag: 'Main Branch'
-},
-{
   name: 'Upperhill',
   address: 'Upperhill, Nairobi',
-  hours: 'Mon–Sat · 9:00 AM – 6:00 PM',
-  phone: '+254 700 000 002'
+  hours: 'Daily · 9:00 AM – 4:00 PM',
+  phone: '0719 806 999'
 },
 {
   name: 'Wilson Airport',
-  address: 'Wilson Airport, Nairobi',
-  hours: 'Mon–Sun · 7:00 AM – 8:00 PM',
-  phone: '+254 700 000 003'
+  address: 'Pewin House, Ground Floor, next to I&M Bank, Wilson Airport',
+  hours: 'Mon–Fri · 8:30 AM – 6:00 PM · Holidays 9:00 AM – 4:00 PM',
+  phone: '0769 55 88 11'
 }];
 
 export function Branches() {
