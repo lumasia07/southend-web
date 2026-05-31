@@ -19,6 +19,7 @@ import {
   itemVariants } from
 '../components/AnimatedSection';
 import { useScreenInit } from '../useScreenInit.js';
+import { WhatsAppChatButton } from '../components/WhatsAppChatButton';
 const CHANNELS = [
 {
   icon: SendIcon,
@@ -328,12 +329,7 @@ export function Remittance() {
               <ArrowRightIcon className="h-4 w-4" />
             </span>
           </Link>
-          <a
-            href="https://wa.me/254700000000"
-            className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/10">
-            
-            Chat on WhatsApp
-          </a>
+          <WhatsAppChatButton variant="outline-light" showArrow={false} />
         </div>
       </AnimatedSection>
     </>);

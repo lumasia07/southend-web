@@ -14,6 +14,7 @@ import {
   itemVariants } from
 '../components/AnimatedSection';
 import { useScreenInit } from '../useScreenInit.js';
+import { WhatsAppChatButton } from '../components/WhatsAppChatButton';
 interface FAQItem {
   q: string;
   a: string;
@@ -253,15 +254,7 @@ export function FAQ() {
             queries are answered within an hour during business hours.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="https://wa.me/254700000000"
-              className="group inline-flex items-center gap-3 rounded-full bg-brand pl-6 pr-1.5 py-1.5 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition-colors hover:bg-brand-600">
-              
-              Chat on WhatsApp
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
-                <ArrowRightIcon className="h-4 w-4" />
-              </span>
-            </a>
+            <WhatsAppChatButton variant="brand" />
             <Link
               to="/corporate#contact"
               className="rounded-full border border-navy/10 bg-white px-6 py-3 text-sm font-semibold text-navy transition-colors hover:border-brand/40">
