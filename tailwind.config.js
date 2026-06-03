@@ -29,8 +29,8 @@ export default {content: [
         },
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['Lexend', 'system-ui', 'sans-serif'],
+        display: ['Lexend', 'system-ui', 'sans-serif'],
       },
     },
   },

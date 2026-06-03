@@ -131,8 +131,7 @@ export function Footer() {
               <div className="flex items-start gap-2">
                 <MapPinIcon className="mt-0.5 h-4 w-4 text-brand" />
                 <span>
-                  Pewin House, Ground Floor, next to I&M Bank, Wilson Airport,
-                  Nairobi
+                  The Beacon Mall, First floor, Upperhill, Nairobi
                 </span>
               </div>
             </div>

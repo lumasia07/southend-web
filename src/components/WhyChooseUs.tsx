@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { ComponentType } from 'react';
+import { motion } from 'framer-motion';
 import {
   ZapIcon,
   ShieldCheckIcon,
@@ -118,72 +119,148 @@ function FeatureTile({
     </div>);
 
 }
+const centerVariants = {
+  hidden: { opacity: 0, scale: 0.2 },
+  show: (delay: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 140,
+      damping: 12,
+      delay
+    }
+  }),
+  hover: {
+    scale: 1.06,
+    y: -4,
+    filter: "drop-shadow(0px 20px 30px rgba(238, 90, 42, 0.35))",
+    transition: { type: "spring", stiffness: 300, damping: 20 }
+  }
+};
+
+const cellVariants = {
+  hidden: { opacity: 0, scale: 0.3 },
+  show: (delay: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 15,
+      delay
+    }
+  }),
+  hover: {
+    scale: 1.06,
+    y: -6,
+    filter: "drop-shadow(0px 20px 30px rgba(238, 90, 42, 0.22))",
+    transition: { type: "spring", stiffness: 300, damping: 20 }
+  }
+};
+
+const iconVariants = {
+  rest: { rotate: 0, scale: 1 },
+  hover: {
+    rotate: 12,
+    scale: 1.15,
+    transition: { type: "spring", stiffness: 400, damping: 10 }
+  }
+};
+
 function Honeycomb() {
   return (
-    <div className="relative mx-auto max-w-5xl">
+    <motion.div
+      className="relative mx-auto max-w-5xl"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       <div className="grid grid-cols-12 gap-x-4 gap-y-2">
         {/* Top row */}
         <div className="col-span-3 col-start-3">
-          <HexCell {...items[0]} />
+          <HexCell {...items[0]} delay={0.25} />
         </div>
         <div className="col-span-3 col-start-8">
-          <HexCell {...items[1]} />
+          <HexCell {...items[1]} delay={0.3} />
         </div>
         {/* Middle row */}
         <div className="col-span-3 col-start-1 -mt-12">
-          <HexCell {...items[2]} />
+          <HexCell {...items[2]} delay={0.35} />
         </div>
         <div className="col-span-3 col-start-5 -mt-12">
-          <HexCenter />
+          <HexCenter delay={0.1} />
         </div>
         <div className="col-span-3 col-start-9 -mt-12">
-          <HexCell {...items[3]} />
+          <HexCell {...items[3]} delay={0.4} />
         </div>
         {/* Bottom row */}
         <div className="col-span-3 col-start-3 -mt-12">
-          <HexCell {...items[4]} />
+          <HexCell {...items[4]} delay={0.45} />
         </div>
         <div className="col-span-3 col-start-8 -mt-12">
-          <HexCell {...items[5]} />
+          <HexCell {...items[5]} delay={0.5} />
         </div>
       </div>
-    </div>);
-
+    </motion.div>
+  );
 }
+
 function HexCell({
   icon: Icon,
   title,
-  desc
-
-
-
-
-
-
-}: {icon: ComponentType<{className?: string;}>;title: string;desc: string;}) {
+  desc,
+  delay
+}: {
+  icon: ComponentType<{ className?: string }>;
+  title: string;
+  desc: string;
+  delay: number;
+}) {
   return (
-    <div className="group relative aspect-[1/1.1547]">
-      <div className="clip-hex absolute inset-0 bg-gradient-to-br from-white to-white/90 shadow-xl transition-transform group-hover:scale-[1.02]" />
-      <div className="clip-hex absolute inset-[2px] bg-white" />
+    <motion.div
+      custom={delay}
+      variants={cellVariants}
+      className="group relative aspect-[1/1.1547] cursor-pointer"
+      initial="hidden"
+      whileInView="show"
+      whileHover="hover"
+      animate="rest"
+      style={{ filter: "drop-shadow(0px 10px 15px rgba(10, 25, 41, 0.08))" }}
+    >
+      <div className="clip-hex absolute inset-0 bg-gradient-to-br from-white to-white/90" />
+      <div className="clip-hex absolute inset-[2px] bg-white transition-colors duration-300 group-hover:bg-brand/[0.01]" />
       <div className="relative flex h-full flex-col items-center justify-center px-7 text-center">
-        <div className="grid h-10 w-10 place-items-center rounded-lg bg-brand/10 text-brand">
+        <motion.div
+          variants={iconVariants}
+          className="grid h-10 w-10 place-items-center rounded-lg bg-brand/10 text-brand"
+        >
           <Icon className="h-5 w-5" />
-        </div>
+        </motion.div>
         <h3 className="mt-3 text-base font-semibold tracking-tight text-brand">
           {title}
         </h3>
         <p className="mt-1.5 text-[11px] leading-snug text-navy/70">{desc}</p>
       </div>
-    </div>);
-
+    </motion.div>
+  );
 }
-function HexCenter() {
-  return (
-    <div className="relative aspect-[1/1.1547]">
-      <div className="clip-hex absolute inset-0 bg-brand shadow-2xl" />
-      <div className="relative flex h-full flex-col items-center justify-center px-6 text-center text-white">
-        <Logo variant="dark" className="h-20 md:h-24 mix-blend-screen" />
-      </div>
-    </div>);
 
+function HexCenter({ delay }: { delay: number }) {
+  return (
+    <motion.div
+      custom={delay}
+      variants={centerVariants}
+      className="group relative aspect-[1/1.1547]"
+      initial="hidden"
+      whileInView="show"
+      whileHover="hover"
+      style={{ filter: "drop-shadow(0px 10px 15px rgba(238, 90, 42, 0.15))" }}
+    >
+      <div className="clip-hex absolute inset-0 bg-brand" />
+      <div className="relative flex h-full flex-col items-center justify-center px-6 text-center text-white">
+        <Logo variant="dark" className="h-20 md:h-24 mix-blend-screen transition-transform duration-300 group-hover:scale-105" />
+      </div>
+    </motion.div>
+  );
 }

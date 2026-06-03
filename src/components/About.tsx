@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircle2Icon, ArrowRightIcon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 const points = [
-'Real-time forex rates across all major currencies',
-'Secure, swift transactions to over 100 countries',
-'Advanced encryption and 24/7 customer support',
-'Personal touch — relationships, not just transactions'];
+  'Real-time forex rates across all major currencies',
+  'Secure, swift transactions to over 100 countries',
+  'Advanced encryption and 24/7 customer support',
+  'Personal touch — relationships, not just transactions'];
+
+const ABOUT_IMAGES = [
+  "https://images.unsplash.com/photo-1556742205-e10c9486e506?auto=format&fit=crop&w=1200&q=80", // Mobile remittance/payment
+  "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1200&q=80", // Forex/Currencies
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80", // Personal connection/Partners
+  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"  // Financial platform/Analysis
+];
 
 export function About() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % ABOUT_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="about" className="relative bg-white py-24">
       <div className="mx-auto max-w-7xl px-6">
@@ -15,10 +33,21 @@ export function About() {
         {/* Floor 1: Full-width intro with image background */}
         <div className="relative overflow-hidden rounded-3xl">
           <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1556742205-e10c9486e506?auto=format&fit=crop&w=1200&q=80"
-              alt="Customer using mobile remittance"
-              className="h-full w-full object-cover" />
+            <AnimatePresence initial={false}>
+              <motion.img
+                key={currentImageIndex}
+                src={ABOUT_IMAGES[currentImageIndex]}
+                alt="Southend services background"
+                className="absolute inset-0 h-full w-full object-cover"
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1.15 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  opacity: { duration: 1.2, ease: "easeInOut" },
+                  scale: { duration: 5.5, ease: "linear" }
+                }}
+              />
+            </AnimatePresence>
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy/80 to-navy-700/70" />
           </div>
           <div className="relative px-8 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24">
