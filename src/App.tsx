@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
@@ -11,10 +11,19 @@ import { BranchesPage } from './pages/BranchesPage';
 import { Corporate } from './pages/Corporate';
 import { FAQ } from './pages/FAQ';
 import { Blog } from './pages/Blog';
+import { Splash } from './components/Splash';
+
 export function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <AnimatePresence mode="wait">
+        {showSplash && (
+          <Splash key="splash" onComplete={() => setShowSplash(false)} />
+        )}
+      </AnimatePresence>
       <div className="min-h-full w-full bg-white">
         <Navbar />
         <AnimatedRoutes />
