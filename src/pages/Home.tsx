@@ -2,6 +2,7 @@ import React from 'react';
 import { useScreenInit } from '../useScreenInit.js';
 import { Hero } from '../components/Hero';
 import { RatesTicker } from '../components/RatesTicker';
+import { CalculatorSection } from '../components/CalculatorSection';
 import { About } from '../components/About';
 import { Services } from '../components/Services';
 import { WhyChooseUs } from '../components/WhyChooseUs';
@@ -15,6 +16,9 @@ export function Home() {
     <>
       <Hero />
       <RatesTicker />
+      <AnimatedSection>
+        <CalculatorSection />
+      </AnimatedSection>
       <AnimatedSection>
         <About />
       </AnimatedSection>

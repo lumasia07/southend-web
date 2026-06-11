@@ -5,7 +5,7 @@ import {
   MapPinIcon,
   StarIcon } from
 'lucide-react';
-import { RateCalculator } from './RateCalculator';
+import { TechHologram } from './TechHologram';
 const FADE_UP = {
   hidden: {
     opacity: 0,
@@ -22,19 +22,11 @@ const FADE_UP = {
 };
 export function Hero() {
   return (
-    <section id="home" className="relative isolate overflow-hidden">
-      {/* Background image from the blog forex chart */}
-      <div className="absolute inset-0 -z-20">
-        <img
-          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1920&q=80"
-          alt=""
-          className="h-full w-full object-cover"
-          aria-hidden="true"
-        />
-      </div>
+    <section id="home" className="relative isolate overflow-hidden bg-cyber-grid bg-scanlines bg-fixed">
       {/* Smooth gradient overlay maintaining the navy/brand theme */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-navy-900/95 via-navy/90 to-navy-700/85" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_85%_30%,rgba(238,90,42,0.18),transparent_45%)]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#050d18] via-navy-900/90 to-[#0a1929]/95" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_85%_30%,rgba(238,90,42,0.2),transparent_50%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_65%,rgba(14,165,233,0.15),transparent_50%)]" />
 
       {/* Floating ambient blobs */}
       <motion.div
@@ -101,7 +93,7 @@ export function Hero() {
             className="mt-8 flex flex-col gap-3 sm:flex-row">
             
             <a
-              href="#calculator"
+              href="#calculator-section"
               className="group inline-flex items-center justify-between gap-3 rounded-full bg-brand pl-6 pr-1.5 py-1.5 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition-all hover:bg-brand-600 hover:shadow-brand/40">
               
               Send Money
@@ -141,16 +133,14 @@ export function Hero() {
         </div>
 
         <motion.div
-          id="calculator"
+          id="hologram-container"
           variants={{
             hidden: {
               opacity: 0,
-              y: 30,
-              scale: 0.97
+              scale: 0.95
             },
             show: {
               opacity: 1,
-              y: 0,
               scale: 1,
               transition: {
                 duration: 0.8,
@@ -159,9 +149,8 @@ export function Hero() {
               }
             }
           }}
-          className="flex justify-center lg:justify-end">
-          
-          <RateCalculator />
+          className="flex justify-center lg:justify-end w-full">
+          <TechHologram />
         </motion.div>
       </motion.div>
     </section>);

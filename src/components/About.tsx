@@ -1,131 +1,113 @@
-import React, { useState, useEffect } from 'react';
-import { CheckCircle2Icon, ArrowRightIcon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const points = [
-  'Real-time forex rates across all major currencies',
-  'Secure, swift transactions to over 100 countries',
-  'Advanced encryption and 24/7 customer support',
-  'Personal touch — relationships, not just transactions'];
-
-const ABOUT_IMAGES = [
-  "https://images.unsplash.com/photo-1556742205-e10c9486e506?auto=format&fit=crop&w=1200&q=80", // Mobile remittance/payment
-  "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1200&q=80", // Forex/Currencies
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80", // Personal connection/Partners
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"  // Financial platform/Analysis
-];
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 export function About() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % ABOUT_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section id="about" className="relative bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Storeyed Layout — Two visual "floors" */}
+    <section id="about" className="relative overflow-hidden bg-[#050d18] py-24 text-white">
+      {/* Background cyber grid & glow */}
+      <div className="absolute inset-0 bg-cyber-grid bg-scanlines opacity-10 pointer-events-none" />
+      <div className="absolute -left-40 top-1/4 -z-10 h-96 w-96 rounded-full bg-brand/10 blur-3xl pointer-events-none" />
+      <div className="absolute -right-40 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         
-        {/* Floor 1: Full-width intro with image background */}
-        <div className="relative overflow-hidden rounded-3xl">
-          <div className="absolute inset-0">
-            <AnimatePresence initial={false}>
-              <motion.img
-                key={currentImageIndex}
-                src={ABOUT_IMAGES[currentImageIndex]}
-                alt="Southend services background"
-                className="absolute inset-0 h-full w-full object-cover"
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1.15 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  opacity: { duration: 1.2, ease: "easeInOut" },
-                  scale: { duration: 5.5, ease: "linear" }
-                }}
-              />
-            </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy/80 to-navy-700/70" />
-          </div>
-          <div className="relative px-8 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24">
-            <div className="max-w-xl">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand">
-                  About us
-                </span>
-                <span className="h-px w-12 bg-brand" />
+        {/* Floor 1: Cinematic, full-width storeyed banner with 50/50 split */}
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-brand/10 bg-scanlines">
+          <div className="grid lg:grid-cols-12 items-stretch">
+            
+            {/* Left Column: Story & Typography */}
+            <div className="lg:col-span-6 px-8 py-16 sm:px-12 lg:px-16 z-10 flex flex-col justify-center">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-8 bg-brand" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+                    Our Story
+                  </span>
+                </div>
+                <h2 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl text-white">
+                  Global Network, <br />
+                  <span className="bg-gradient-to-r from-brand to-orange-400 bg-clip-text text-transparent">
+                    Personal Touch.
+                  </span>
+                </h2>
               </div>
-              <h2 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
-                Global Remittance, with a{' '}
-                <span className="text-brand">Personal Touch</span>
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-white/80">
-                <span className="font-semibold text-white">Southend</span> is your
-                trusted partner in financial innovation. Our platform offers
-                seamless forex trading and international money transfers with
-                real-time rates, a user-friendly experience, and secure, swift
-                transactions to over 100 countries.
+
+              <p className="mt-6 text-white/80 text-sm leading-relaxed">
+                Southend bridges the gap between state-of-the-art money transfer rails and trusted local relationships. By deploying advanced transaction systems alongside a dedicated personal service model, we ensure that your retail foreign exchange, global remittance, and corporate treasury needs are met with speed, security, and integrity.
               </p>
-              <a
-                href="/corporate#contact"
-                className="group mt-8 inline-flex items-center gap-3 rounded-full bg-brand pl-6 pr-1.5 py-1.5 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition-all hover:bg-brand-600 hover:shadow-brand/40">
-                Get in Touch
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
-                  <ArrowRightIcon className="h-4 w-4" />
-                </span>
-              </a>
+
+              <div className="mt-8">
+                <a
+                  href="#calculator-section"
+                  className="group inline-flex items-center gap-3 rounded-full bg-brand pl-6 pr-1.5 py-1.5 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition-all hover:bg-brand-600 hover:shadow-brand/40"
+                >
+                  Get Started
+                  <span className="grid h-9 w-9 place-items-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Visual illustration on half right to avoid stretching */}
+            <div className="lg:col-span-6 relative min-h-[350px] lg:min-h-auto overflow-hidden border-t border-white/10 lg:border-t-0 lg:border-l lg:border-white/10">
+              <img
+                src="/banner-mainv2-16-9-v2.png"
+                alt="Southend Characters Ecosystem"
+                className="absolute inset-0 w-full h-full object-cover object-center select-none"
+              />
+              {/* Subtle gradients to blend the image edges with the dark console */}
+              <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#050d18] to-transparent hidden lg:block" />
+              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#050d18] to-transparent lg:hidden" />
+            </div>
+
+          </div>
+        </div>
+
+        {/* Floor 2: Stats stacked below - completely borderless and clean */}
+        <div className="mt-16 grid gap-8 grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto text-center lg:text-left border-t border-white/10 pt-12">
+          <div className="flex flex-col items-center lg:items-start">
+            <div className="text-4xl font-bold font-mono text-white flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
+              08
+            </div>
+            <div className="text-[11px] font-semibold uppercase tracking-widest text-white/40 mt-1.5">
+              Years Operational
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center lg:items-start">
+            <div className="text-4xl font-bold font-mono text-white flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
+              50K+
+            </div>
+            <div className="text-[11px] font-semibold uppercase tracking-widest text-white/40 mt-1.5">
+              Customers Served
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center lg:items-start">
+            <div className="text-4xl font-bold font-mono text-white flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              100+
+            </div>
+            <div className="text-[11px] font-semibold uppercase tracking-widest text-white/40 mt-1.5">
+              Global Channels
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center lg:items-start">
+            <div className="text-4xl font-bold font-mono text-white flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-yellow-500 animate-pulse" />
+              24/7
+            </div>
+            <div className="text-[11px] font-semibold uppercase tracking-widest text-white/40 mt-1.5">
+              Direct Support
             </div>
           </div>
         </div>
 
-        {/* Floor 2: Feature highlights & stats — stacked below */}
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          {/* Left: Feature checklist */}
-          <div className="rounded-3xl border border-navy/10 bg-[#f7f8fa] p-8 sm:p-10">
-            <h3 className="text-lg font-semibold tracking-tight text-navy">
-              Why thousands choose Southend
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-navy/70">
-              Enjoy advanced security, 24/7 customer support, and competitive
-              forex rates. As a CBK-licensed forex bureau with an IMT licence
-              granted in 2025, Southend serves customers across Kenya.
-            </p>
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {points.map((p) =>
-              <li
-                key={p}
-                className="flex items-start gap-3 text-sm text-navy/80">
-                
-                <CheckCircle2Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" />
-                <span>{p}</span>
-              </li>
-              )}
-            </ul>
-          </div>
-
-          {/* Right: Stats grid */}
-          <div className="grid grid-cols-2 gap-4">
-            <StatCard value="8" label="Years in operation" accent />
-            <StatCard value="50K+" label="Customers served" />
-            <StatCard value="100+" label="Countries reached" />
-            <StatCard value="24/7" label="Customer support" accent />
-          </div>
-        </div>
       </div>
-    </section>);
-
-}
-
-function StatCard({ value, label, accent = false }: {value: string; label: string; accent?: boolean;}) {
-  return (
-    <div className={`flex flex-col items-center justify-center rounded-2xl border p-6 text-center transition-all hover:-translate-y-1 hover:shadow-lg ${accent ? 'border-brand/30 bg-brand/5' : 'border-navy/10 bg-white'}`}>
-      <div className="text-3xl font-bold tracking-tight text-navy">{value}</div>
-      <div className="mt-1 text-xs font-medium uppercase tracking-widest text-navy/60">
-        {label}
-      </div>
-    </div>);
-
+    </section>
+  );
 }
