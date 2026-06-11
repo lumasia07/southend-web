@@ -15,22 +15,22 @@ export function Splash({ onComplete }: SplashProps) {
     // Disable body scroll when splash is active
     document.body.style.overflow = 'hidden';
 
-    // Sequence of animations (extended by 10s to 26 seconds total):
+    // Sequence of animations (reduced to 11 seconds total):
     // 1. Concentric rings expand and spin for 2.2 seconds.
     // 2. Logo emerges and expands at 2.2 seconds.
     const logoTimer = setTimeout(() => {
       setStage('logo');
     }, 2200);
 
-    // 3. Discard the rings for the last 5 seconds (starts at 21.0 seconds)
+    // 3. Discard the rings for the last 5 seconds (starts at 6.0 seconds)
     const discardRingsTimer = setTimeout(() => {
       setShowLogoRings(false);
-    }, 21000);
+    }, 6000);
 
-    // 4. Complete splash screen at 26.0 seconds (16s + 10s)
+    // 4. Complete splash screen at 11.0 seconds
     const completeTimer = setTimeout(() => {
       onComplete();
-    }, 26000);
+    }, 11000);
 
     return () => {
       document.body.style.overflow = 'unset';
